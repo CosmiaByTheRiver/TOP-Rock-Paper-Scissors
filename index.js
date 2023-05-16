@@ -22,6 +22,8 @@ function oneRound(playerSelection, computerSelection) {
 
     if (playerSelection == playerSelection && computerSelection == "Paper") {
         return "You lost."
+    } else {
+        return "Invalid."
     }
 }
 
