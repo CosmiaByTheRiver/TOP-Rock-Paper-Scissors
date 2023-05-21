@@ -17,30 +17,35 @@ function getComputerChoice() {
 
 function oneRound(playerSelection, computerSelection) {
 
+let promptQuestion = "Rock, paper, or scissors?";
+
+let playerPrompt = prompt(promptQuestion);
+
+let promptLowerCase = playerPrompt.toLowerCase(promptQuestion);
     playerSelection = playerSelection.toLowerCase(playerSelection);
 
-                //rock
-    if (playerSelection == playerSelection && computerSelection == "Paper") {
+
+    if (promptLowerCase == playerSelection && computerSelection == "Paper") {
         return "You lost. Paper beats rock."
     }
-                //rock
-    else if (playerSelection == playerSelection && computerSelection == "Scissors") {
+
+    else if (promptLowerCase == playerSelection && computerSelection == "Scissors") {
         return "You win! Rock beats scissors.";
     }
-              //paper
-    else if (playerSelection == playerSelection && computerSelection == "Rock") {
+
+    else if (promptLowerCase == playerSelection && computerSelection == "Rock") {
         return "You win! Paper beats rock.";
     }
-            //paper
-    else if (playerSelection == playerSelection && computerSelection == "Scissors") {
+
+    else if (promptLowerCase == playerSelection && computerSelection == "Scissors") {
         return "You lose. Scissors beats paper.";
     }
-                //scissors
-    else if (playerSelection == playerSelection && computerSelection == "Paper") {
+
+    else if (promptLowerCase == playerSelection && computerSelection == "Paper") {
         return "You win! Scissors beats paper.";
     }
-              //scissors
-    else if (playerSelection == playerSelection && computerSelection == "Rock") {
+
+    else if (promptLowerCase == playerSelection && computerSelection == "Rock") {
         return "You lose. Rock beats scissors.";
     }
 }
