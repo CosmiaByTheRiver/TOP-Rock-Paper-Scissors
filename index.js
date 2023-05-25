@@ -14,43 +14,58 @@ function getComputerChoice() {
 
 //----------------------------------------//
 
+let promptQuestion;
+
+let playerPrompt;
+
+let playerSelection;
 
 function oneRound(playerSelection, computerSelection) {
 
-let promptQuestion = "Rock, paper, or scissors?";
+promptQuestion = "Rock, paper, or scissors?";
 
-let playerPrompt = prompt(promptQuestion);
+playerPrompt = prompt(promptQuestion);
 
-let promptLowerCase = playerPrompt.toLowerCase(promptQuestion);
-    playerSelection = playerSelection.toLowerCase(playerSelection);
+playerSelection = playerPrompt.toLowerCase();
 
 
-    if (promptLowerCase == playerSelection && computerSelection == "Paper") {
-        return "You lost. Paper beats rock."
+    if (playerSelection === "rock" && computerSelection === "Paper") {
+        return "You lost. Paper beats rock.";
     }
 
-    else if (promptLowerCase == playerSelection && computerSelection == "Scissors") {
+    else if (playerSelection === "rock" && computerSelection === "Scissors") {
         return "You win! Rock beats scissors.";
     }
 
-    else if (promptLowerCase == playerSelection && computerSelection == "Rock") {
+    else if (playerSelection === "paper" && computerSelection === "Rock") {
         return "You win! Paper beats rock.";
     }
 
-    else if (promptLowerCase == playerSelection && computerSelection == "Scissors") {
+    else if (playerSelection == "rock" && computerSelection == "Rock") {
+        return "Tie.";
+    }
+
+    else if (playerSelection === "paper" && computerSelection === "Scissors") {
         return "You lose. Scissors beats paper.";
     }
 
-    else if (promptLowerCase == playerSelection && computerSelection == "Paper") {
+    else if (playerSelection == "paper" && computerSelection == "Paper") {
+        return "Tie.";
+    }
+
+    else if (playerSelection === "scissors" && computerSelection === "Paper") {
         return "You win! Scissors beats paper.";
     }
 
-    else if (promptLowerCase == playerSelection && computerSelection == "Rock") {
+    else if (playerSelection === "scissors" && computerSelection === "Rock") {
         return "You lose. Rock beats scissors.";
+    }
+
+    else if (playerSelection == "scissors" && computerSelection == "Scissors") {
+        return "Tie.";
     }
 }
 
-let playerSelection  = "rock";
 let computerSelection = getComputerChoice();
 
 
@@ -58,6 +73,7 @@ let computerSelection = getComputerChoice();
 
 
 function game() {
+
     console.log(oneRound(playerSelection, getComputerChoice()));
     console.log(oneRound(playerSelection, getComputerChoice()));
     console.log(oneRound(playerSelection, getComputerChoice()));
